@@ -1,0 +1,54 @@
+kilometre_maliyet=float(input("Araciniz kilometrede maliyet olarak ne kadar tuketmektedir. Lutfen euro cinsinden giriniz\t:"))
+alinan_yol=float(input("Gunluk kac kilometre yol yaptiniz. Km cinsinden degeri girini\t:"))
+ocak=30
+subat=28
+mart=30
+nisan=31
+mayis=30
+haziran=31
+temmuz=30
+agustos=31
+eylul=30
+ekim=31
+kasim=30
+aralik=31
+
+gm=kilometre_maliyet*alinan_yol
+print("Gunluk Maliyetiniz\t:",gm)
+print("Ocak Ayi Maliyetiniz\t:",gm*ocak,"\nSubat ayi maliyetiniz\t:",gm*subat,"\nMart Ayi Maliyetiniz\t:",gm*mart,"\nNisan ayi maliyetiniz\t:",gm*nisan,"\nMayis Ayi Maliyetiniz\t:",gm*mayis,"\nHaziran ayi maliyetiniz\t:",gm*haziran,"\nTemmuz Ayi Maliyetiniz\t:",gm*temmuz,"\nAgustos ayi maliyetiniz\t:",gm*agustos,"\nEylul Ayi Maliyetiniz\t:",gm*eylul,"\nEkim ayi maliyetiniz\t:",gm*ekim,"\nKasim Ayi Maliyetiniz\t:",gm*kasim,"\nAralik ayi maliyetiniz\t:",gm*aralik,"\nYillik maliyetiniz\t:",gm*365)
+
+#ay_gun_sayisi=int(input("Hesaplamak istediginiz ay kac gunden olusmaktadir\t:"))
+#aylik_maliyet=ay_gun_sayisi*gm
+#print("aylik maliyetiniz\t:",aylik_maliyet)
+
+liste1=["ocak","mart","mayis","temmuz","eylul","kasim"]
+liste2=["nisan","haziran","agustos","ekim","aralik"]
+liste3=["subat"]
+while True:
+    secilen_ay = input("Lutfen hangi ayin hesabini yapmak istediginizi giriniz\t:")
+
+    if secilen_ay in liste1:
+        print("Aylik Maliyetiniz\t:",gm*30)
+        cevap=input("Baska bir ayi hesabini yapmak istermisiniz\t'E' yada 'H' seciniz \t:")
+        if cevap=="E":
+            continue
+        else:
+            break
+
+    elif secilen_ay in liste2:
+        print("Aylik Maliyetiniz\t:",gm * 31)
+        cevap = input("Baska bir ayi hesabini yapmak istermisiniz\t'E' yada 'H' seciniz \t:")
+        if cevap == "E":
+            continue
+        else:
+            break
+    elif secilen_ay in liste3:
+        print("Aylik Maliyetiniz\t:",gm * 28)
+        cevap = input("Baska bir ayi hesabini yapmak istermisiniz\t'E' yada 'H' seciniz \t:")
+        if cevap == "E":
+            continue
+        else:
+            break
+
+    else:
+        continue
