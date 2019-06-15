@@ -1,0 +1,1 @@
+# adnanodevler-hafta1
