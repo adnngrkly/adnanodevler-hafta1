@@ -1,0 +1,88 @@
+#odev-1
+kelime=input("Lutfen Bir Kelime Giriniz:\t")
+print((len(kelime)+2)*'$','\n','$',kelime,'$','\n','$','-'*len(kelime),'$','\n',(len(kelime)+2)*'$',sep="")
+
+
+#odev-2
+mesafe = float(input("Lutfen mesafe bilgisini km cinsinden '4.5' sekli ile giriniz\t:"))
+print("Girdiginiz mesafenin mil olarak esdegeri\t:",mesafe*0.621371192)
+
+#odev-3
+ad=input("Lutfen adinizi giriniz\t:")
+soyad=input("Lutfen soyadinizi giriniz\t:")
+vizenot=int(input("Lutfen vize notunuzu 0 ile  100  arasinda bir deger giriniz\t:"))
+final=int(input("Lutfen final  notunuzu 0 ile 100 arasinda bir deger giriniz\t:"))
+takip=int(input("Lutfen kac derse katilmadiginizi giriniz. Eger katilmadiginiz ders sayisi 20'den fazla ise 20  olarak giriniz\t:"))
+takipnot=100-(takip*5)
+yilsonunotortalama=vizenot*0.3+final*0.5+takipnot*0.2
+
+notortalamasi=('''        Bu Yil Sonu Puan Hesaplama Programidir
+      {} isimli ve {} soyisimli ogrencinin
+      vize notu={}
+      final notu={}
+      girmedigi ders sayisi={}
+      olup bu bilgiler dogrultusunda yil sonu ders ortalamasi ise {} dur.''')
+print(notortalamasi.format(ad,soyad,vizenot,final,takip,yilsonunotortalama))
+dosya=open("ogrenciNotHesaplama.txt","w")
+
+print(notortalamasi.format(ad,soyad,vizenot,final,takip,yilsonunotortalama),file=dosya,flush=True)
+import os
+print(os.getcwd())
+
+#odev-4
+
+anapara=float(input("Lutfen ana paranizi TL cinsinden giriniz\t:"))
+faizsuresi=float(input("Lutfen faiz suresini yil olarak giriniz\t:"))
+faizorani=float(input("Lutfen faiz oranini giriniz\t:"))
+faiz=anapara*faizsuresi*faizorani/100
+yillik=faiz/faizsuresi
+aylik=yillik/12
+gunluk=yillik/365
+toplam=anapara+faiz
+print("Toplam Faiz Miktariniz\t:",faiz,' TL','\n',"Aylik Faiz Miktariniz\t:",aylik,' TL','\n' ,"Gunluk Faiz Miktariniz\t:",gunluk,' TL','\n',"Toplam Para Miktariniz\t:",toplam,' TL',sep='')
+dosya=open("faizhesaplama.txt","w")
+print("Toplam Faiz Miktariniz\t:",faiz,'\n',"Aylik Faiz Miktariniz\t:",aylik,'\n' ,"Gunluk Faiz Miktariniz\t:",gunluk,'\n',"Toplam Para Miktariniz\t:",toplam,sep='',file=dosya)
+dosya.close()
+
+
+#odev-5
+
+aylikgelir=float(input("Lutfen Aylik Gelirinizi $ Cinsinden Giriniz\t:"))
+mutfak=float(input("Lutfen Aylik Mutfak Giderinizi $ Ciinsinden Giriniz\t:"))
+egitim=float(input("Lutfen Aylik Egitim Giderinizi $ Ciinsinden Giriniz\t:"))
+giyim=float(input("Lutfen Aylik Giyim Giderinizi $ Ciinsinden Giriniz\t:"))
+ulasim=float(input("Lutfen Aylik Ulasim Giderinizi $ Ciinsinden Giriniz\t:"))
+
+toplamgider=mutfak+egitim+giyim+ulasim
+mutfakoran=(mutfak*100)/aylikgelir
+egitimoran=(egitim*100)/aylikgelir
+giyimoran=(giyim*100)/aylikgelir
+ulasimoran=(ulasim*100)/aylikgelir
+
+print("Toplam Aylik Masrafiniz\t:",toplamgider,' $','\n',"Mutfak Masrafinizin Aylik Gelirinize Gore Orani\t:",mutfakoran,' $','\n',"Egitim Masrafinizin Aylik Gelirinize Gore Orani\t:",egitimoran,' $','\n',"Giyim Masrafinizin Aylik Gelirinize Gore Orani\t:",giyimoran,' $','\n',"Ulasim Masrafinizin Aylik Gelirinize Gore Orani\t:",ulasimoran,' $',sep="")
+dosya=open("aylikmasraf.txt","w")
+print("Toplam Aylik Masrafiniz\t:",toplamgider,' $','\n',"Mutfak Masrafinizin Aylik Gelirinize Gore Orani\t:",mutfakoran,' $','\n',"Egitim Masrafinizin Aylik Gelirinize Gore Orani\t:",egitimoran,' $','\n',"Giyim Masrafinizin Aylik Gelirinize Gore Orani\t:",giyimoran,' $','\n',"Ulasim Masrafinizin Aylik Gelirinize Gore Orani\t:",ulasimoran,' $',file=dosya,flush=True,sep="")
+
+
+
+#odev-6
+print("Python’un kurucusu Guido Van Rossum, Hollanda’nin Amsterdam’daki  \"Universiteit Van Amsterdam\" okulundan  1982’de mezun olmuştur.")
+print('Python’un kurucusu Guido Van Rossum, Hollanda’nin Amsterdam’daki  "Universiteit Van Amsterdam" okulundan  1982’de mezun olmuştur.')
+print('''Python’un kurucusu Guido Van Rossum, Hollanda’nin Amsterdam’daki  "Universiteit Van Amsterdam" okulundan  1982’de mezun olmuştur.''')
+kelime1=("Python’un")
+kelime2=("kurucusu")
+kelime3=("Guido")
+kelime4=("Van")
+kelime5=("Rossum,")
+kelime6=("Hollanda’nin")
+kelime7=("Amsterdam’daki")
+kelime8=(' "Universiteit')
+kelime9=("Van")
+kelime10=('Amsterdam"')
+kelime11=("okulundan")
+kelime12=(" 1982’de")
+kelime13=("mezun")
+kelime14=("olmuştur.")
+print(kelime1,kelime2,kelime3,kelime4,kelime5,kelime6,kelime7,kelime8,kelime9,kelime10,kelime11,kelime12,kelime13,kelime14,sep=" ",end="\n")
+cumle=kelime1+" "+kelime2+" "+kelime3+" "+kelime4+" "+kelime5+" "+kelime6+" "+kelime7+" "+kelime8+" "+kelime9+" "+kelime10+" "+kelime11+" "+kelime12+" "+kelime13+" "+kelime14
+print(cumle)
